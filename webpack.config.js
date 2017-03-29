@@ -44,7 +44,7 @@ module.exports = function (options) {
           use: [{
             loader: 'file-loader',
             options: {
-              name: '[name]-[chunkhash:6].[ext]'
+              name: '[name]-[hash:6].[ext]'
             }
           }]
         },
