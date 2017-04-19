@@ -64,6 +64,7 @@ module.exports = function (options) {
     },
     resolve: {
       alias: {
+        'react$': 'react/lib/ReactWithAddons.js',
         '~': resolve(__dirname, 'src')
       }
     },

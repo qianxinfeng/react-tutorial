@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf dist && webpack -p --progress  --hide-modules",
     "dev": "webpack-dev-server -d --inline --hot --open --env.dev",
-    "mock":"json-server --watch db.json",
+    "mock": "json-server --watch db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -34,6 +34,7 @@
     "axios": "^0.16.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-mixin": "^3.0.5",
     "remarkable": "^1.7.1"
   }
 }
