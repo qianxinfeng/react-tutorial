@@ -1,5 +1,7 @@
 import React from 'react';
+import ReactMixin from 'react-mixin';
 import TodoList from './TodoList.js';
+
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -7,9 +9,6 @@ class App extends React.Component{
       items:["123","xxxx"],
       text:""
     }
-  }
-  onChange(e){
-    this.setState({text:e.target.value});
   }
   handleSubmit(e){
     e.preventDefault();
@@ -31,12 +30,12 @@ class App extends React.Component{
         <h3>TODO</h3>
         <TodoList items={this.state.items} onDelete={this.handleDelete.bind(this)}/>
         <form onSubmit={this.handleSubmit.bind(this)}>
-           <input onChange={this.onChange.bind(this)} value={this.state.text} />
+           <input valueLink={this.linkState('text')} />
            <button>{'Add #' + (this.state.items.length + 1)}</button>
         </form>
       </div>
     );
   }
 }
-
+ReactMixin.onClass(App, React.addons.LinkedStateMixin);
 export default App;

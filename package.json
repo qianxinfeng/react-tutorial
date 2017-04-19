@@ -1,5 +1,5 @@
 {
-  "name": "quick-start",
+  "name": "react-totorial",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-mixin": "^3.0.5"
   }
 }
