@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMixin from 'react-mixin'
 import http from 'axios'
 class CommentForm extends React.Component {
     constructor(props) {
@@ -8,12 +9,6 @@ class CommentForm extends React.Component {
             text: ""
         }
 
-    }
-    handleAuthorChange(e) {
-        this.setState({ author: e.target.value });
-    }
-    handleTextChange(e) {
-        this.setState({ text: e.target.value });
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -30,19 +25,18 @@ class CommentForm extends React.Component {
             <form className="commentForm" onSubmit={this.handleSubmit.bind(this)}>
                 <div>
                     <input type="text"
-                        value={this.state.author}
                         placeholder="Your name"
-                        onChange={this.handleAuthorChange.bind(this)} />
+                        valueLink={this.linkState('author')}/>
                 </div>
                 <div>
                     <textarea
-                        value={this.state.text}
                         placeholder="Say something..."
-                        onChange={this.handleTextChange.bind(this)} />
+                        valueLink={this.linkState('text')}/>
                 </div>
                 <input type="submit" value="Post" />
             </form>
         );
     }
 }
+ReactMixin.onClass(CommentForm,React.addons.LinkedStateMixin);
 export default CommentForm;
