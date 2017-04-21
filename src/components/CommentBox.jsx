@@ -1,6 +1,6 @@
 import React from 'react';
-import CommentList from './CommentList.js'
-import CommentForm from './CommentForm.js'
+import CommentList from './CommentList'
+import CommentForm from './CommentForm'
 import http from 'axios'
 
 class CommentBox extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentBox from './CommentBox.js'
+import CommentBox from './CommentBox'
 
 
 class App extends React.Component{
