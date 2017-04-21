@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMixin from 'react-mixin';
-import TodoList from './TodoList.js';
+import TodoList from './TodoList';
 
 class App extends React.Component{
   constructor(props){
