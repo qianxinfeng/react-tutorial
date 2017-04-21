@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactMixin from 'react-mixin'
-import http from 'axios'
+
 class CommentForm extends React.Component {
     constructor(props) {
         super(props);

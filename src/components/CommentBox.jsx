@@ -3,10 +3,9 @@ import CommentList from './CommentList'
 import CommentForm from './CommentForm'
 import http from 'axios'
 
+const apiUrl="http://localhost:3000/comments";
+
 class CommentBox extends React.Component {
-    get apiUrl(){
-        return "http://localhost:3000/comments"
-    }
     constructor(props){
         super(props);
         this.state={
@@ -14,14 +13,14 @@ class CommentBox extends React.Component {
         }
     }
     loadCommentsFromServer(){
-        http.get(this.apiUrl).then(res=>{
+        http.get(apiUrl).then(res=>{
             this.setState({data: res.data});
         }).catch(error=>{
             console.error(`get comments error:${error}`);
         })
     }
     handleCommentSubmit(comment){
-        http.post(this.apiUrl,comment).then(res=>{
+        http.post(apiUrl,comment).then(res=>{
            comment=res.data;
            let newData=this.state.data.concat([comment]);
            this.setState({data:newData});
